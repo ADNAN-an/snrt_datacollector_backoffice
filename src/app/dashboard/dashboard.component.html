@@ -1,0 +1,8 @@
+<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+<div class="dashboard-container">
+  <app-body
+      [collapsed]="isSideNavCollapsed"
+      [screenWidth]="screenWidth"
+  ></app-body>
+  <router-outlet></router-outlet> <!-- This is where the routed components will be displayed -->
+</div>

@@ -1,0 +1,47 @@
+.table {
+    width: 100%;
+  }
+  
+@media (max-width: 768px) {
+    .table {
+      font-size: 0.9em;
+    }
+  
+    .table th, .table td {
+      padding: 0.5rem;
+    }
+  }
+  
+.table-actions {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem; 
+}
+
+.table-actions button {
+    font-size: 1rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  margin-top: 16px;
+}
+
+.green-button {
+  background-color: green !important; 
+  color: white !important;
+  &:hover {
+    background-color: darkgreen !important; 
+  }
+}
+
+.toast-success {
+  background-color: #28a745; 
+}
+
+.toast-error {
+  background-color: #dc3545; 
+}
+
