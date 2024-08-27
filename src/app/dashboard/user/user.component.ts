@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { NgToastModule, NgToastService, ToasterPosition } from 'ng-angular-popup' 
 
 @Component({
   selector: 'app-user',
@@ -18,8 +18,8 @@ export class UsersComponent implements OnInit {
   showDeleteModal = false;
   deleteUserId: number | null = null;
   userIdToUpdate: number | null = null;
-
-  constructor(private apiService: ApiService, private router: Router, private toastr: ToastrService) {}
+  ToasterPosition = ToasterPosition;
+  constructor(private apiService: ApiService, private router: Router, private toast: NgToastService) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -33,6 +33,7 @@ export class UsersComponent implements OnInit {
       },
       (error) => {
         console.error('Failed to fetch users', error);
+        this.toast.danger("Failed to load users.", "ERROR", 5000);
       }
     );
   }
@@ -76,11 +77,11 @@ export class UsersComponent implements OnInit {
       next: (response) => {
         this.loadUsers();  
         this.closeAddUserModal();
-        this.toastr.success('User added successfully!');
+        this.toast.success("User added successfully!", "SUCCESS", 5000);
       },
       error: (error) => {
         console.error('Error adding user:', error);
-        this.toastr.error('Error adding user.');
+        this.toast.danger("Failed to add user.", "ERROR", 5000);
       }
     });
   }
@@ -91,9 +92,11 @@ export class UsersComponent implements OnInit {
         next: (response) => {
           this.loadUsers();
           this.closeUpdateUserModal();
+          this.toast.success("User updated successfully!", "SUCCESS", 5000);
         },
         error: (error) => {
           console.error('Error updating user:', error);
+          this.toast.danger("Failed to update user.", "ERROR", 5000);
         }
       });
     }
@@ -106,11 +109,11 @@ export class UsersComponent implements OnInit {
           console.log('User deleted successfully', response);
           this.loadUsers(); 
           this.closeDeleteModal();
-          this.toastr.success('User deleted successfully!');
+          this.toast.success("User deleted successfully!", "SUCCESS", 5000);
         },
         error: (err) => {
           console.error('Error deleting user:', err);
-          this.toastr.error('Error deleting user.');
+          this.toast.danger("Failed to delete user.", "ERROR", 5000);
         }
       });
     }

@@ -3,13 +3,28 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
+export interface Donnees {
+  dataId: number;
+  ipAddress: string;
+  eventType: string;
+  value: string;
+  country: string;
+  city: string;
+  browser: string;
+  deviceType: string;
+  operatingSystem: string;
+  creationDate: Date;
+}
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
   private apiUrl = 'http://localhost:8080/oauth/token'; 
   private adminApiUrl = 'http://localhost:8080/api/admin';
   private superAdminApiUrl = 'http://localhost:8080/api/superadmin';
+  private allDataUrl = 'http://localhost:8080/api/data';
 
   private clientId = 'snrt-datacollector-api';
   private clientSecret = '9mUCVwPmoD2DwvFtLxQldikIKv4NMgJIw2J1aYVYkjqrluEDON';
@@ -112,4 +127,7 @@ export class ApiService {
     }
 }
  
+    getAllData(): Observable<Donnees[]> {
+      return this.http.get<Donnees[]>(this.allDataUrl);
+    }
 }
