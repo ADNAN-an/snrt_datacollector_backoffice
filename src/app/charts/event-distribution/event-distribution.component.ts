@@ -13,6 +13,8 @@ export class EventDistributionComponent implements OnInit {
   chartOptions: Highcharts.Options = {
     chart: {
       type: 'pie',
+      height: 310,
+      backgroundColor: 'transparent',
     },
     title: {
       text: 'Event Type Distribution',
@@ -39,10 +41,13 @@ export class EventDistributionComponent implements OnInit {
       {
         name: 'Events',
         colorByPoint: true,
-        type: 'pie', // Explicitly typing as 'pie'
-        data: [], // Empty initial data
-      } as Highcharts.SeriesPieOptions,  // Cast the series as Highcharts.SeriesPieOptions
+        type: 'pie', 
+        data: [], 
+      } as Highcharts.SeriesPieOptions,  
     ],
+    credits: {
+      enabled: false
+    },
   };
 
   constructor(private apiService: ApiService) {}
@@ -81,6 +86,6 @@ export class EventDistributionComponent implements OnInit {
 
   updateChartData(data: { name: string, y: number }[]): void {
     (this.chartOptions.series![0] as Highcharts.SeriesPieOptions).data = data;
-    Highcharts.chart('container', this.chartOptions);  // Update the chart with new data
+    Highcharts.chart('container', this.chartOptions); 
   }
 }
