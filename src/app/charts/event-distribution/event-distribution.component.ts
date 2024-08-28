@@ -18,6 +18,9 @@ export class EventDistributionComponent implements OnInit {
     },
     title: {
       text: 'Event Type Distribution',
+      style: {
+        color: '#253162', 
+      }
     },
     tooltip: {
       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
@@ -43,6 +46,17 @@ export class EventDistributionComponent implements OnInit {
         colorByPoint: true,
         type: 'pie', 
         data: [], 
+        colors: [
+          '#005b96', 
+          '#006bbf', 
+          '#0076d1',
+          '#0080e2',
+          '#0090f1', 
+          '#4da3e6', 
+          '#80b9f2', 
+          '#b3d4f5', 
+          '#d9eafc', 
+        ],
       } as Highcharts.SeriesPieOptions,  
     ],
     credits: {
