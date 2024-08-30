@@ -130,4 +130,15 @@ export class ApiService {
     getAllData(): Observable<Donnees[]> {
       return this.http.get<Donnees[]>(this.allDataUrl);
     }
+
+    getUserEmail(): string | null {
+      const tokenData = sessionStorage.getItem('token');
+      if (tokenData) {
+        const token = JSON.parse(tokenData).access_token;
+        const decodedToken = this.getJwtPayload(token);
+        return decodedToken.user_name || null;
+      } else {
+        return null;
+      }
+    }
 }

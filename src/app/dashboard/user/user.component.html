@@ -1,3 +1,4 @@
+<div class="dashboard-container">
 <div *ngIf="users && users.length > 0" [ngClass]="{'blur-background': showModal || showDeleteModal || showUpdateModal}">
   <div class="header-container">
   <h2>Users Management</h2>
@@ -23,7 +24,7 @@
 
     <ng-container *ngIf="isSuperAdmin()" matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
-      <mat-cell *matCellDef="let user">
+      <mat-cell *matCellDef="let user" class="button-cell">
         <button mat-flat-button (click)="openUpdateUserModal(user)">Edit</button>
         <button mat-flat-button color="warn" (click)="openDeleteModal(user.id)">Delete</button>
       </mat-cell>
@@ -34,7 +35,7 @@
     <mat-row *matRowDef="let row; columns: getDisplayedColumns();"></mat-row>
   </mat-table>
 </div>
-
+</div>
 <ng-toast [width]="300" [position]="ToasterPosition.BOTTOM_RIGHT" />
 
 <!-- Add User Modal -->

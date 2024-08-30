@@ -1,13 +1,42 @@
-.body {
-    width: calc(100% - 5rem);
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    margin-left: 5rem;
-    z-index: 0;
-    position: relative;
+}
+
+app-sidenav {
+    position: fixed;
     top: 0;
-    transition: all .5s ease;
-    background: #f4f7fa;
+    left: 0;
+    height: 100%;
+    width: 5rem; /* Adjust width as needed */
+    z-index: 10; /* Ensure it’s above other content */
+}
+
+app-topnav {
+    position: fixed;
+    top: 0;
+    left: 5rem; /* Adjust to match sidenav width */
+    width: calc(100% - 5rem);
+    height: 3rem; /* Adjust height as needed */
+    z-index: 10; /* Ensure it’s above other content */
+}
+
+.app-body {
+    margin-top: 3rem; /* Adjust to match topnav height */
+    margin-left: 5rem; /* Adjust to match sidenav width */
+    height: calc(100vh - 3rem); /* Full height minus topnav height */
+    overflow-y: auto; /* Allows scrolling if content overflows */
     padding: 3rem;
+    background: #f4f7fa;
+    transition: all .5s ease;
+    z-index: 0;
 }
 
 .body-trimmed {

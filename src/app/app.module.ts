@@ -29,6 +29,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { GeoMapComponent } from './charts/geo-map/geo-map.component';
 import { EventDistributionComponent } from './charts/event-distribution/event-distribution.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TopnavComponent } from './dashboard/topnav/topnav.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     SettingsComponent,
     GeoMapComponent,
     EventDistributionComponent,
+    TopnavComponent,
   ],
   imports: [
     BrowserModule,

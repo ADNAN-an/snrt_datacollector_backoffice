@@ -1,5 +1,5 @@
 .table {
-    width: 100%;
+    width: 60%;
   }
   
 @media (max-width: 768px) {
@@ -32,6 +32,7 @@
 
 .green-button {
   background-color: green !important; 
+  margin-right: 35px;
   color: white !important;
   &:hover {
     background-color: darkgreen !important; 
@@ -71,4 +72,17 @@
   text-align: center;
 }
 
+.dashboard-container {
+  margin-left: 6rem;
+  position: relative;
+}
 
+.button-cell {
+  display: flex;
+  gap: 0.5rem; 
+  align-items: center; 
+}
+
+.button-cell button {
+  margin-right: 0.5rem;
+}

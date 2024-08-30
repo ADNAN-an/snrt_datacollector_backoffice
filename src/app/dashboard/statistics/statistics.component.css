@@ -2,4 +2,8 @@
     overflow: hidden;
     height: 100%;
   }
-  
+
+.col-md-5 {
+    margin-top: 25px;
+    position: relative;
+}
