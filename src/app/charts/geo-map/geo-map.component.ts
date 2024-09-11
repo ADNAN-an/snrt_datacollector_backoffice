@@ -68,13 +68,12 @@ export class GeoMapComponent implements OnInit {
   initChart(countryData: any[]): void {
     const chartDom = document.getElementById('geo-chart');
     if (!chartDom) return;
-
+  
     this.chartInstance = echarts.init(chartDom);
-    
-    const countryDataMap = new Map<string, number>(
-      countryData.map(({ name, value }) => [name, value])
-    );
-
+  
+    // Define color gradient from light to dark blue
+    const colorGradient = ['#b3cde0', '#005b96'];
+  
     const option = {
       title: {
         text: 'Geographical Distribution of Users',
@@ -83,8 +82,7 @@ export class GeoMapComponent implements OnInit {
         textStyle: {
           fontSize: 18,
           fontWeight: 'bold',
-          color: '#1E2A5E',
-        
+          color: '#253162', // Updated title color
         }
       },
       tooltip: {
@@ -92,14 +90,17 @@ export class GeoMapComponent implements OnInit {
         formatter: '{b}: {c} Users'
       },
       visualMap: {
-        min: Math.min(...countryData.map(d => d.value)),
+        min: 0,
         max: Math.max(...countryData.map(d => d.value)),
         left: 'right',
         top: 'center',
         text: ['High', 'Low'],
         calculable: true,
         inRange: {
-          color: ['#b3cde0', '#005b96'] 
+          color: colorGradient
+        },
+        outOfRange: {
+          color: '#ddd' // Color for countries with no data
         }
       },
       geo: {
@@ -111,10 +112,10 @@ export class GeoMapComponent implements OnInit {
           }
         },
         itemStyle: {
-          areaColor: '#ddd',
+          areaColor: '#ddd', // Default color
           borderColor: '#fff',
           borderWidth: 0.5
-        }, 
+        },
         center: [-7.0926, 31.7917],
         zoom: 4.5
       },
@@ -127,7 +128,7 @@ export class GeoMapComponent implements OnInit {
           data: countryData,
           label: {
             show: true,
-            formatter: (params:any) => {
+            formatter: (params: any) => {
               return params.value ? `${params.name}: ${params.value}` : '';
             }
           },
@@ -143,7 +144,7 @@ export class GeoMapComponent implements OnInit {
         }
       ]
     };
-
+  
     this.chartInstance.setOption(option);
   }
-}
+}  
