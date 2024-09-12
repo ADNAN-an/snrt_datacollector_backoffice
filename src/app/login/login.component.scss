@@ -17,7 +17,7 @@ html, body {
 }
 
 button:focus-visible {
-  outline: 2px solid #004a8c !important; /* Darker blue for focus outline */
+  outline: 2px solid #004a8c !important;
   outline: -webkit-focus-ring-color auto 5px !important;
 }
 
@@ -88,7 +88,7 @@ a {
   height: 557px;
   border-radius: 278.5px;
   border: 1px solid;
-  border-color: #004a8c; /* Darker blue for ellipse border */
+  border-color: #004a8c;
 }
 
 .ellipse-2 {
@@ -99,7 +99,7 @@ a {
   height: 557px;
   border-radius: 278.5px;
   border: 1px solid;
-  border-color: #004a8c; /* Darker blue for ellipse-2 border */
+  border-color: #004a8c;
 }
 
 .content {
@@ -144,7 +144,7 @@ a {
   gap: 10px;
   padding: 8px 30px;
   flex: 0 0 auto;
-  background-color: #004a8c; /* Darker blue for button background */
+  background-color: #004a8c; 
   border-radius: 30px;
   display: inline-flex;
   position: relative;
@@ -236,18 +236,18 @@ a {
 }
 
 .button {
-  background-color: #004a8c; /* Darker blue for button background */
+  background-color: #004a8c; 
   color: #fff;
   padding: 16px;
   border-radius: 30px;
   border: none;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #00376b; /* Even darker blue for hover effect */
+  background-color: #00376b;
 }
 
 .button .text-wrapper-5 {
