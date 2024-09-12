@@ -1,0 +1,257 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Poppins:500,400,700");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0px;
+  height: 100%;
+  overflow: hidden;
+}
+
+:root {
+  --white: rgba(255, 255, 255, 1);
+}
+
+button:focus-visible {
+  outline: 2px solid #004a8c !important; /* Darker blue for focus outline */
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.register {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.div {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  position: relative;
+}
+
+.left-content {
+  position: absolute;
+  width: 1067px;
+  height: 100%;
+  top: 0;
+  left: -207px;
+}
+
+.overlap {
+  position: relative;
+  height: 100%;
+}
+
+.bg {
+  position: absolute;
+  width: 860px;
+  height: 100%;
+  top: 0;
+  left: 150px;
+  background: linear-gradient(180deg, rgb(3, 85, 169) 0%, rgb(1, 32, 95) 84.79%, rgb(1, 23, 85) 100%);
+}
+
+.group {
+  position: absolute;
+  width: 638px;
+  height: 583px;
+  bottom: 0;
+  left: 0;
+}
+
+.overlap-group {
+  position: relative;
+  height: 583px;
+}
+
+.ellipse {
+  top: 380px;
+  left: 81px;
+  position: absolute;
+  width: 557px;
+  height: 557px;
+  border-radius: 278.5px;
+  border: 1px solid;
+  border-color: #004a8c; /* Darker blue for ellipse border */
+}
+
+.ellipse-2 {
+  top: 350px;
+  left: 0;
+  position: absolute;
+  width: 557px;
+  height: 557px;
+  border-radius: 278.5px;
+  border: 1px solid;
+  border-color: #004a8c; /* Darker blue for ellipse-2 border */
+}
+
+.content {
+  position: absolute;
+  width: 568px;
+  height: 87px;
+  top: 50%;
+  left: 326px;
+  transform: translateY(-50%);
+}
+
+.frame {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+  display: inline-flex;
+  position: relative;
+}
+
+.div-wrapper {
+  position: relative;
+  width: 570px;
+  height: 27px;
+  margin-right: -2px;
+}
+
+.text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: var(--white);
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame-2 {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 30px;
+  flex: 0 0 auto;
+  background-color: #004a8c; /* Darker blue for button background */
+  border-radius: 30px;
+  display: inline-flex;
+  position: relative;
+}
+
+.text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.logo {
+  position: absolute;
+  width: 50%;
+  max-width: 450px; 
+  height: auto; 
+  top: 210px;
+  left: 322px;
+}
+
+.right-content {
+  position: absolute;
+  width: 350px;
+  height: 400px;
+  top: 60%;
+  left: 970px;
+  transform: translateY(-50%);
+}
+
+.title .text-wrapper-3 {
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #333;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.title p {
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #333;
+  font-size: 18px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border: 1px solid #eeeeee;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.input {
+  flex: 1;
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  padding-left: 40px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: #333;
+}
+
+.input::placeholder {
+  color: #999;
+  opacity: 0.6;
+}
+
+.img {
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.button {
+  background-color: #004a8c; /* Darker blue for button background */
+  color: #fff;
+  padding: 16px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+.button:hover {
+  background-color: #00376b; /* Even darker blue for hover effect */
+}
+
+.button .text-wrapper-5 {
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  color: #fff;
+}
